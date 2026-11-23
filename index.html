@@ -2,606 +2,892 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>ChainDev | Learn. Build. Connect. Impact.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ChainDev is a developer community in Dutsin-Ma helping students and aspiring developers learn, build, connect and create impact."
+      content="ChainDev is an independent, inclusive developer community based in Dutsin-Ma, Katsina State, Nigeria. Learn, build, connect and create impact through technology."
     />
+    <meta name="theme-color" content="#07111f" />
+    <title>ChainDev — Learn. Build. Connect. Impact.</title>
     <style>
       :root {
-        --bg: #050914;
-        --panel: #0a1222;
-        --text: #f8fafc;
-        --muted: #94a3b8;
-        --green: #6ee7b7;
-        --cyan: #67e8f9;
-        --line: #1e293b;
+        --bg: #07111f;
+        --panel: #0d1b2d;
+        --panel2: #10243a;
+        --text: #f5f8fc;
+        --muted: #a5b4c7;
+        --green: #75e3b5;
+        --cyan: #72dff0;
+        --line: #ffffff18;
+        --max: 1140px;
       }
       * {
         box-sizing: border-box;
       }
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 90px;
       }
       body {
         margin: 0;
-        background: var(--bg);
+        background:
+          radial-gradient(ellipse at 80% 0%, #12304a55, transparent 38%),
+          var(--bg);
         color: var(--text);
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-        line-height: 1.6;
-        background-image:
-          linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-        background-size: 48px 48px;
+        font:
+          16px/1.7 Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          sans-serif;
       }
       a {
         color: inherit;
         text-decoration: none;
       }
       .wrap {
-        width: min(1120px, calc(100% - 40px));
+        width: min(var(--max), calc(100% - 40px));
         margin: auto;
       }
-      .nav {
+      .header {
         position: sticky;
         top: 0;
-        z-index: 4;
-        background: #050914dd;
-        backdrop-filter: blur(14px);
-        border-bottom: 1px solid #ffffff0d;
+        z-index: 10;
+        background: #07111fef;
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(16px);
       }
-      .navin {
-        height: 68px;
+      .nav {
+        min-height: 76px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 24px;
       }
-      .logo {
-        font-size: 21px;
+      .brand {
+        font-size: 24px;
         font-weight: 900;
+        letter-spacing: -1px;
       }
-      .logo span,
-      .eyebrow {
+      .brand span {
         color: var(--green);
       }
-      nav {
+      .navlinks {
         display: flex;
+        align-items: center;
         gap: 24px;
-        color: #cbd5e1;
+        color: #d2dbe7;
         font-size: 14px;
+      }
+      .navlinks a:hover,
+      .footer a:hover {
+        color: var(--green);
       }
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 13px 20px;
-        border-radius: 12px;
+        padding: 12px 19px;
+        border-radius: 11px;
         font-weight: 800;
-        border: 1px solid #ffffff1a;
+        border: 1px solid var(--line);
+        transition: 0.2s;
       }
-      .primary {
+      .btn-primary {
         background: var(--green);
-        color: #03110d;
+        color: #06150f;
+        border-color: var(--green);
       }
-      .secondary {
-        background: #ffffff0a;
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px #75e3b52b;
+      }
+      .btn-ghost {
+        background: #ffffff08;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        color: var(--text);
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 8px 12px;
+        font-size: 20px;
       }
       .hero {
-        min-height: 700px;
+        padding: 110px 0 100px;
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 60px;
+        grid-template-columns: 1.15fr 0.85fr;
         align-items: center;
-        padding: 80px 0;
+        gap: 64px;
+        min-height: 650px;
       }
-      .badge,
-      .tag {
-        display: inline-block;
-        border: 1px solid #6ee7b733;
-        background: #6ee7b70b;
-        color: #a7f3d0;
+      .eyebrow {
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .location {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid #75e3b544;
+        background: #75e3b50c;
+        color: #b8f4d9;
+        padding: 6px 12px;
         border-radius: 999px;
-        padding: 6px 11px;
         font-size: 12px;
         font-weight: 700;
       }
-      .hero h1 {
-        font-size: clamp(52px, 7vw, 82px);
-        line-height: 0.95;
-        letter-spacing: -0.06em;
+      h1 {
+        font-size: clamp(48px, 7vw, 82px);
+        line-height: 0.99;
+        letter-spacing: -0.065em;
         margin: 24px 0;
       }
       .gradient {
-        background: linear-gradient(90deg, var(--green), var(--cyan), #60a5fa);
+        background: linear-gradient(90deg, var(--green), var(--cyan));
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
       }
       .lead {
-        font-size: 19px;
+        font-size: 18px;
         color: var(--muted);
-        max-width: 650px;
+        max-width: 690px;
       }
       .actions {
         display: flex;
         gap: 12px;
-        margin-top: 30px;
+        flex-wrap: wrap;
+        margin: 30px 0 18px;
       }
-      .terminal {
-        border: 1px solid #ffffff1a;
-        background: #08101d;
-        border-radius: 28px;
-        padding: 22px;
-        box-shadow: 0 24px 80px #0009;
+      .hero-note {
+        font-size: 13px;
+        color: #8193a9;
       }
-      .termbar {
-        border-bottom: 1px solid #ffffff0d;
-        padding-bottom: 14px;
-        color: #64748b;
-        font: 12px monospace;
-      }
-      .code {
-        margin-top: 16px;
-        background: #040811;
-        border-radius: 18px;
+      .code-card {
+        border: 1px solid var(--line);
+        background: linear-gradient(145deg, #10243a, #091522);
+        border-radius: 24px;
         padding: 24px;
-        font: 15px/2 monospace;
-        color: #cbd5e1;
+        box-shadow: 0 25px 80px #0005;
       }
-      .code .g {
+      .code-top {
+        display: flex;
+        justify-content: space-between;
+        color: #8295aa;
+        font:
+          12px ui-monospace,
+          monospace;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 14px;
+      }
+      pre {
+        white-space: pre-wrap;
+        margin: 20px 0 0;
+        padding: 22px;
+        background: #050d17;
+        border-radius: 15px;
+        color: #d7e4ef;
+        font:
+          14px/2 ui-monospace,
+          SFMono-Regular,
+          Consolas,
+          monospace;
+      }
+      .green {
         color: var(--green);
       }
-      .code .c {
+      .cyan {
         color: var(--cyan);
       }
       section {
-        padding: 96px 0;
+        padding: 88px 0;
         border-top: 1px solid #ffffff0d;
       }
-      .eyebrow {
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        font-size: 13px;
-        font-weight: 900;
-      }
-      .title {
-        max-width: 780px;
-        font-size: clamp(36px, 5vw, 56px);
-        line-height: 1.05;
-        letter-spacing: -0.04em;
-        margin: 12px 0 20px;
+      .section-title {
+        font-size: clamp(34px, 5vw, 54px);
+        line-height: 1.08;
+        letter-spacing: -0.045em;
+        max-width: 800px;
+        margin: 12px 0 18px;
       }
       .muted {
         color: var(--muted);
       }
-      .grid4 {
+      .grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 16px;
-        margin-top: 42px;
+        margin-top: 36px;
       }
       .card {
-        background: linear-gradient(145deg, #102038, #08101d);
-        border: 1px solid #ffffff14;
-        border-radius: 20px;
         padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(145deg, #10243a, #0a1726);
       }
-      .card b {
+      .card .number {
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--green);
+      }
+      .card h3 {
+        margin: 12px 0 6px;
         font-size: 20px;
       }
-      .num {
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 34px;
+        align-items: start;
+      }
+      .event {
+        margin-top: 30px;
+        border: 1px solid #75e3b544;
+        border-radius: 24px;
+        padding: 32px;
+        background: linear-gradient(130deg, #75e3b512, #0c1a2a 65%);
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 30px;
+      }
+      .pill {
+        display: inline-block;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 10px;
+        font-size: 11px;
+        color: #c8d5e3;
+        margin: 3px;
+      }
+      .event h3 {
+        font-size: 34px;
+        line-height: 1.15;
+        margin: 14px 0;
+      }
+      .event-info {
+        background: #030a1280;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 20px;
+      }
+      .event-info p {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 12px;
+        margin: 0 0 12px;
+      }
+      .event-info p:last-child {
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+      .status {
         color: var(--green);
         font-size: 12px;
         font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
       }
-      .event {
-        margin-top: 40px;
-        border: 1px solid #6ee7b744;
-        background: linear-gradient(135deg, #6ee7b71a, #07101d 60%);
-        border-radius: 30px;
-        padding: 40px;
-        display: grid;
-        grid-template-columns: 1.25fr 0.75fr;
-        gap: 32px;
-      }
-      .event h3 {
-        font-size: 40px;
-        line-height: 1.1;
-        margin: 15px 0;
-      }
-      .info {
-        background: #0004;
-        border: 1px solid #ffffff14;
-        border-radius: 20px;
-        padding: 24px;
-      }
-      .info p {
-        padding-bottom: 14px;
-        border-bottom: 1px solid #ffffff0d;
-      }
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .tag {
-        color: #cbd5e1;
-        border-color: #ffffff1a;
-        background: #ffffff08;
-      }
-      .join-btn {
+      .project-status {
         display: inline-block;
-        margin-top: 24px;
-        padding: 14px 28px;
-
-        background: #6ee7b7;
-        color: #04120d;
+        margin-top: 12px;
+        color: #fbd38d;
+        font-size: 11px;
         font-weight: 800;
-        font-size: 16px;
-
-        border: 2px solid #6ee7b7;
-        border-radius: 12px;
-
-        text-decoration: none;
-
-        transition: all 0.25s ease;
-        box-shadow: 0 0 20px rgba(110, 231, 183, 0.25);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
       }
-
-      .join-btn:hover {
-        background: transparent;
-        color: #6ee7b7;
-
-        transform: translateY(-2px);
-
-        box-shadow: 0 0 30px rgba(110, 231, 183, 0.45);
+      .join-panel {
+        border: 1px solid #75e3b544;
+        border-radius: 26px;
+        padding: 40px;
+        background:
+          radial-gradient(ellipse at top, #75e3b51b, transparent 65%), #0a1726;
       }
-
-      .join-btn:active {
-        transform: translateY(0);
+      .form-frame {
+        margin-top: 28px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+        min-height: 520px;
       }
-      .activities {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+      .form-frame iframe {
+        display: block;
+        width: 100%;
+        min-height: 700px;
+        border: 0;
       }
-      .cta {
+      .form-placeholder {
+        padding: 30px;
+        color: #102030;
         text-align: center;
-        border: 1px solid #6ee7b744;
-        background: radial-gradient(circle, #6ee7b724, transparent 70%);
-        border-radius: 30px;
-        padding: 70px 24px;
       }
-      .team {
+      .values {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 26px;
+      }
+      .value {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #ffffff05;
+      }
+      .value b {
+        color: var(--green);
+      }
+      .team-card {
         display: flex;
         align-items: center;
         gap: 18px;
+        max-width: 560px;
       }
       .avatar {
-        width: 68px;
-        height: 68px;
-        border-radius: 18px;
+        width: 58px;
+        height: 58px;
         display: grid;
         place-items: center;
-        color: #03110d;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--green), var(--cyan));
+        color: #06150f;
         font-weight: 900;
-        background: linear-gradient(145deg, var(--green), var(--cyan));
       }
-      footer {
-        padding: 48px 0;
-        color: #64748b;
-        border-top: 1px solid #ffffff0d;
+      .footer {
+        padding: 38px 0;
+        border-top: 1px solid var(--line);
+        color: #91a2b6;
       }
-      .foot {
+      .footer-inner {
         display: flex;
         justify-content: space-between;
+        gap: 20px;
+        align-items: center;
       }
-      @media (max-width: 850px) {
-        nav {
+      .footer p {
+        margin: 5px 0;
+        font-size: 13px;
+      }
+      .registration-form {
+        width: 100%;
+        max-width: 850px;
+        margin: 40px auto 0;
+        overflow: hidden;
+        border-radius: 16px;
+      }
+
+      .registration-form iframe {
+        display: block;
+        width: 100%;
+        min-height: 3839px;
+        border: none;
+        background: transparent;
+      }
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding: 80px 0;
+        }
+        .code-card {
+          max-width: 650px;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .navlinks {
+          display: none;
+          position: absolute;
+          top: 75px;
+          left: 0;
+          right: 0;
+          padding: 20px;
+          background: #07111f;
+          border-bottom: 1px solid var(--line);
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .navlinks.open {
+          display: flex;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .nav > .btn {
           display: none;
         }
-        .hero,
         .event {
           grid-template-columns: 1fr;
         }
-        .hero {
-          padding-top: 60px;
-        }
-        .grid4 {
-          grid-template-columns: 1fr 1fr;
-        }
-        .terminal {
-          display: none;
-        }
       }
-      @media (max-width: 560px) {
-        .grid4,
-        .activities {
+      @media (max-width: 600px) {
+        .wrap {
+          width: min(var(--max), calc(100% - 30px));
+        }
+        .hero {
+          padding: 65px 0;
+        }
+        .hero h1 {
+          font-size: 52px;
+        }
+        .grid,
+        .two-col,
+        .values {
           grid-template-columns: 1fr;
+        }
+        section {
+          padding: 66px 0;
+        }
+        .event {
+          padding: 22px;
+        }
+        .event h3 {
+          font-size: 28px;
+        }
+        .join-panel {
+          padding: 22px;
+        }
+        .footer-inner {
+          display: block;
+        }
+        .code-card {
+          display: none;
         }
         .actions {
           flex-direction: column;
+          align-items: stretch;
         }
-        .event {
-          padding: 24px;
-        }
-        .event h3 {
-          font-size: 32px;
-        }
-        .foot {
-          display: block;
-        }
-        .hero h1 {
-          font-size: 50px;
+        .btn {
+          text-align: center;
         }
       }
     </style>
   </head>
   <body>
-    <header class="nav">
-      <div class="wrap navin">
-        <a class="logo" href="#home">Chain<span>Dev</span></a>
-        <nav>
-          <a href="#about">About</a><a href="#events">Events</a
-          ><a href="#projects">Projects</a><a href="#community">Community</a
-          ><a href="#team">Team</a>
+    <header class="header">
+      <div class="wrap nav">
+        <a class="brand" href="#home" aria-label="ChainDev home"
+          >Chain<span>Dev</span></a
+        >
+        <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+          <a href="#about">About</a><a href="#activities">What we do</a
+          ><a href="#events">Events</a><a href="#projects">Projects</a
+          ><a href="#values">Our values</a><a href="#join">Join</a>
         </nav>
-        <a
-          class="btn primary"
-          href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__4Q5tgdUMzUzQkxJRFRDRVFPNlpUNFNUSzNYQkxLTy4u"
-          target="_blank"
-          rel="noopener noreferrer"
+        <a class="btn btn-primary" href="#join">Become a member</a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
         >
-          Join ChainDev</a
-        >
+          ☰
+        </button>
       </div>
     </header>
+
     <main>
-      <div id="home" class="wrap hero">
+      <section class="wrap hero" id="home" style="border: 0">
         <div>
-          <span class="badge">● Dutsin-Ma, Katsina State, Nigeria</span>
+          <span class="location"
+            >● Dutsin-Ma, Katsina State, Nigeria · Open to everyone</span
+          >
+          <p class="eyebrow" style="margin-top: 28px">
+            A community for builders, learners and innovators
+          </p>
           <h1>
-            Building the next generation of
-            <span class="gradient">developers.</span>
+            Learn together.<br /><span class="gradient"
+              >Build what matters.</span
+            >
           </h1>
           <p class="lead">
-            ChainDev is a developer community helping students and aspiring
-            developers learn, build, connect, and create technology that makes
-            an impact.
+            ChainDev is an independent technology community creating room for
+            people to learn, collaborate, build practical skills and connect
+            with the wider tech ecosystem.
           </p>
           <div class="actions">
-            <a class="btn primary" href="#join">Join the Community →</a
-            ><a class="btn secondary" href="#events">Explore Events</a>
+            <a class="btn btn-primary" href="#join">Join the community →</a
+            ><a class="btn btn-ghost" href="#about">Discover ChainDev</a>
           </div>
-          <p class="muted">
-            ✓ No experience required &nbsp; ✓ Learn by doing &nbsp; ✓ Built for
-            community
+          <p class="hero-note">
+            No prior experience required. You do not need to attend a particular
+            institution or live in Dutsin-Ma to take part.
           </p>
         </div>
-        <div class="terminal">
-          <div class="termbar">chaindev/community.ts</div>
-          <div class="code">
-            <span class="c">const</span> community = {<br />&nbsp; location:
-            <span class="g">"Dutsin-Ma"</span>,<br />&nbsp; experience:
-            <span class="g">"everyone welcome"</span>,<br />&nbsp; mission:
-            [<span class="c">"learn", "build", "connect", "impact"</span
-            >]<br />};<br /><br /><span class="g">$</span> start where you are_
+        <div
+          class="code-card"
+          aria-label="ChainDev community code illustration"
+        >
+          <div class="code-top">
+            <span>chaindev/community.js</span><span>● ● ●</span>
           </div>
+          <pre><span class="cyan">const</span> community = {
+  <span class="green">purpose</span>: "learn and build",
+  <span class="green">approach</span>: "hands-on",
+  <span class="green">people</span>: "everyone",
+  <span class="green">values</span>: [
+    "inclusion",
+    "collaboration",
+    "impact"
+  ]
+};
+
+<span class="green">start_where_you_are();</span></pre>
         </div>
-      </div>
+      </section>
+
       <section id="about">
         <div class="wrap">
-          <p class="eyebrow">Why ChainDev</p>
-          <h2 class="title">
-            We are building the community and opportunities we wish existed.
+          <p class="eyebrow">Why ChainDev exists</p>
+          <h2 class="section-title">
+            Talent is everywhere. Access to opportunity should be, too.
           </h2>
           <p class="lead">
-            Dutsin-Ma has talented students and aspiring technologists, but
-            access to practical developer communities, mentorship, hackathons,
-            and global opportunities remains limited. ChainDev is creating a
-            local path from curiosity to contribution.
+            ChainDev began with a simple belief: where someone lives or where
+            they are starting from should not determine how far they can go in
+            technology. We are building a community where curiosity can grow
+            into skills, collaboration and meaningful contributions.
           </p>
-          <div class="grid4">
-            <div class="card">
-              <span class="num">01</span>
-              <h3>Learn</h3>
-              <p class="muted">
-                Beginner-friendly workshops, practical resources, and peer
-                education.
+          <div class="grid">
+            <article class="card">
+              <span class="number">01 / LEARN</span>
+              <h3>Learn with others</h3>
+              <p>
+                Beginner-friendly learning sessions, shared resources and peer
+                support that make technology more approachable.
               </p>
-            </div>
-            <div class="card">
-              <span class="num">02</span>
-              <h3>Build</h3>
-              <p class="muted">
-                Hackathons, coding challenges, and collaborative community
-                projects.
+            </article>
+            <article class="card">
+              <span class="number">02 / BUILD</span>
+              <h3>Build practical skills</h3>
+              <p>
+                Collaborative projects, coding activities and hands-on
+                experiences that turn knowledge into practice.
               </p>
-            </div>
-            <div class="card">
-              <span class="num">03</span>
-              <h3>Connect</h3>
-              <p class="muted">
-                Students, developers, mentors, and technology communities.
+            </article>
+            <article class="card">
+              <span class="number">03 / CONNECT</span>
+              <h3>Find your people</h3>
+              <p>
+                Meet learners, developers, mentors and communities who can help
+                you grow and contribute.
               </p>
-            </div>
-            <div class="card">
-              <span class="num">04</span>
-              <h3>Impact</h3>
-              <p class="muted">
-                Technology projects addressing real community problems.
+            </article>
+            <article class="card">
+              <span class="number">04 / CONTRIBUTE</span>
+              <h3>Create impact</h3>
+              <p>
+                Use technology and shared knowledge to work on challenges that
+                matter to people and communities.
               </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
-      <section id="events">
-        <div class="wrap">
-          <p class="eyebrow">Featured event</p>
-          <h2 class="title">Your first hack starts here.</h2>
-          <div class="event">
-            <div>
-              <span class="badge"
-                >Upcoming · Beginner friendly · In person</span
-              >
-              <h3>Dutsin-Ma Hack Day 2026</h3>
-              <p class="lead">
-                A beginner-friendly MLH Hack Day bringing students, aspiring
-                developers, and technology enthusiasts together to learn,
-                collaborate, and build solutions to real-world problems.
-              </p>
-              <p class="muted">
-                Arrive with an idea or simply your curiosity. Learn during the
-                event, form a team, build something, and present what you
-                created.
-              </p>
-              <div class="tags">
-                <span class="tag">Education</span
-                ><span class="tag">Student life</span
-                ><span class="tag">Local business</span
-                ><span class="tag">Transportation</span
-                ><span class="tag">Agriculture</span
-                ><span class="tag">Community services</span>
-              </div>
-            </div>
-            <div class="info">
-              <p>
-                <b>Dutsin-Ma, Katsina State</b><br /><span class="muted"
-                  >Venue details coming soon</span
-                >
-              </p>
-              <p>
-                <b>2026</b><br /><span class="muted"
-                  >Date and time coming soon</span
-                >
-              </p>
-              <p>
-                <b>Organized by ChainDev</b><br /><span class="muted"
-                  >Powered by MLH / Hacktoberfest</span
-                >
-              </p>
-              <a class="btn primary" href="#join">Get event updates →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
+
+      <section id="activities">
         <div class="wrap">
           <p class="eyebrow">What we do</p>
-          <h2 class="title">Less watching. More doing.</h2>
-          <div class="activities">
-            <div class="card">
-              <b>Hands-on workshops</b>
+          <h2 class="section-title">A place to move from learning to doing.</h2>
+          <div class="two-col">
+            <div>
+              <h3>Learning and community sessions</h3>
               <p class="muted">
-                Programming, web development, Git, AI, cloud, cybersecurity, and
-                developer tools.
+                We create opportunities to explore software development, open
+                source, cloud, AI, cybersecurity and other areas of technology
+                through accessible learning activities.
               </p>
             </div>
-            <div class="card">
-              <b>Accessible hackathons</b>
+            <div>
+              <h3>Projects and collaboration</h3>
               <p class="muted">
-                Friendly building events where learning and teamwork matter more
-                than complexity.
+                We encourage members to learn together, exchange ideas,
+                contribute to projects and develop the confidence to participate
+                in the wider developer ecosystem.
               </p>
             </div>
-            <div class="card">
-              <b>Open-source pathways</b>
+            <div>
+              <h3>Events and hackathons</h3>
               <p class="muted">
-                Learn issues, branches, pull requests, reviews, and real
-                collaboration workflows.
+                We support practical events where people can meet, experiment,
+                collaborate and learn by building.
               </p>
             </div>
-            <div class="card">
-              <b>Mentorship and opportunity</b>
+            <div>
+              <h3>Opportunities and pathways</h3>
               <p class="muted">
-                Connect with guidance, scholarships, programs, internships, and
-                developer communities.
+                We share useful resources and pathways into open source,
+                mentorship, developer programs, learning opportunities and the
+                global tech community.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      <section id="events">
+        <div class="wrap">
+          <p class="eyebrow">Community events</p>
+          <h2 class="section-title">
+            Learning is better when we build together.
+          </h2>
+          <article class="event">
+            <div>
+              <span class="status">Completed · 18 October 2026</span>
+              <h3>Hacktoberfest Hack Day — Dutsin-Ma</h3>
+              <p class="muted">
+                ChainDev hosted a beginner-friendly Hacktoberfest Hack Day in
+                Dutsin-Ma, introducing participants to Git, GitHub and the
+                fundamentals of open-source contribution.
+              </p>
+              <div style="margin-top: 18px">
+                <span class="pill">Open source</span
+                ><span class="pill">Git & GitHub</span
+                ><span class="pill">Beginner-friendly</span
+                ><span class="pill">In person</span>
+              </div>
+            </div>
+            <div class="event-info">
+              <p>
+                <b>Location</b><br /><span class="muted"
+                  >FUDMA Large Lecture Room 2, Dutsin-Ma</span
+                >
+              </p>
+              <p>
+                <b>Date and time</b><br /><span class="muted"
+                  >Sunday, 18 October 2026 · 3:00–6:00 PM</span
+                >
+              </p>
+              <p>
+                <b>Organised by</b><br /><span class="muted"
+                  >ChainDev · Hacktoberfest Hack Day</span
+                >
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="projects">
         <div class="wrap">
-          <p class="eyebrow">Community projects</p>
-          <h2 class="title">Build something real.</h2>
+          <p class="eyebrow">Build in the open</p>
+          <h2 class="section-title">
+            Ideas become stronger when people work on them together.
+          </h2>
           <p class="lead">
-            Members collaborate on projects that solve practical problems, teach
-            modern development workflows, and create visible proof of their
-            skills.
+            We want members to have opportunities to collaborate on useful
+            projects, learn development workflows and turn community ideas into
+            working solutions.
           </p>
-          <div class="grid4">
-            <div class="card">
-              <b>Student Resource Hub</b>
-              <p class="muted">Project concept · Education</p>
-            </div>
-            <div class="card">
-              <b>Local Services Directory</b>
-              <p class="muted">Project concept · Community</p>
-            </div>
-            <div class="card">
-              <b>Campus Lost & Found</b>
-              <p class="muted">Project concept · Student life</p>
-            </div>
-            <div class="card">
-              <b>Your idea here</b>
-              <p class="muted">Open call · Community-led</p>
-            </div>
+          <div class="grid">
+            <article class="card">
+              <h3>Student Resource Hub</h3>
+              <p>
+                A concept for making useful academic and learning resources
+                easier to discover.
+              </p>
+              <span class="project-status">Concept stage</span>
+            </article>
+            <article class="card">
+              <h3>Local Services Directory</h3>
+              <p>
+                A concept exploring how people can discover useful local
+                services and providers.
+              </p>
+              <span class="project-status">Concept stage</span>
+            </article>
+            <article class="card">
+              <h3>Campus Lost & Found</h3>
+              <p>
+                A concept for helping campus communities report and recover
+                misplaced items.
+              </p>
+              <span class="project-status">Concept stage</span>
+            </article>
+            <article class="card">
+              <h3>Your idea could be next</h3>
+              <p>
+                Members are welcome to bring forward ideas and explore building
+                them with others.
+              </p>
+              <span class="project-status">Open to ideas</span>
+            </article>
           </div>
         </div>
       </section>
-      <section id="join">
+
+      <section id="values">
         <div class="wrap">
-          <div class="cta">
-            <p class="eyebrow">Start where you are</p>
-            <h2 class="title" style="margin-inline: auto">
-              Your first line of code could be the beginning of something
-              bigger.
-            </h2>
-            <p class="lead" style="margin-inline: auto">
-              Whether you are just starting out or already building, there is a
-              place for you at ChainDev.
-            </p>
-            <p class="muted">
-              Add your WhatsApp, Discord, or registration link to this button
-              before publishing.
-            </p>
-            <a
-              href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__4Q5tgdUMzUzQkxJRFRDRVFPNlpUNFNUSzNYQkxLTy4u"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join ChainDev
-            </a>
-          </div>
-        </div>
-      </section>
-      <section id="team">
-        <div class="wrap">
-          <p class="eyebrow">Team</p>
-          <h2 class="title">Led locally. Open to contributors.</h2>
-          <div class="card team">
-            <div class="avatar">GM</div>
-            <div>
-              <b>Gidado Mukhtar</b><br /><span
-                class="eyebrow"
-                style="text-transform: none; letter-spacing: 0"
-                >Founder / Community Lead, ChainDev</span
+          <p class="eyebrow">Our community values</p>
+          <h2 class="section-title">
+            A community where people can grow and contribute.
+          </h2>
+          <div class="values">
+            <div class="value">
+              <b>Inclusion</b><br /><span class="muted"
+                >We welcome people across backgrounds, disciplines and
+                experience levels.</span
+              >
+            </div>
+            <div class="value">
+              <b>Learning</b><br /><span class="muted"
+                >We stay curious, share knowledge and make room for
+                beginners.</span
+              >
+            </div>
+            <div class="value">
+              <b>Collaboration</b><br /><span class="muted"
+                >We build with one another and respect different
+                perspectives.</span
+              >
+            </div>
+            <div class="value">
+              <b>Integrity</b><br /><span class="muted"
+                >We communicate honestly and take responsibility for our
+                actions.</span
+              >
+            </div>
+            <div class="value">
+              <b>Respect</b><br /><span class="muted"
+                >We treat members, guests and contributors with dignity.</span
+              >
+            </div>
+            <div class="value">
+              <b>Impact</b><br /><span class="muted"
+                >We aim to use technology and community effort
+                constructively.</span
               >
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="join" class="join-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-tag">Become a Member</span>
+            <h2>Join the ChainDev Community</h2>
+            <p>
+              Whether you're just getting started or already building, there's a
+              place for you in ChainDev. Register and become part of a community
+              that learns, builds and grows together.
+            </p>
+          </div>
+
+          <div class="registration-form">
+            <iframe
+              data-tally-src="https://tally.so/embed/6DZVkk?hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="3839"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="ChainDev Community Membership Registration"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="team">
+        <div class="wrap">
+          <p class="eyebrow">Community leadership</p>
+          <h2 class="section-title">Led locally. Open to contributors.</h2>
+          <div class="card team-card">
+            <div class="avatar">GM</div>
+            <div>
+              <b>Gidado Mukhtar</b><br /><span class="muted"
+                >Founder & Community Lead, ChainDev</span
+              >
+            </div>
+          </div>
+          <p class="muted" style="max-width: 700px; margin-top: 20px">
+            ChainDev is an independent community initiative based in Dutsin-Ma,
+            Katsina State, Nigeria. It is open to people beyond any single
+            institution or location.
+          </p>
         </div>
       </section>
     </main>
-    <footer>
-      <div class="wrap foot">
+
+    <footer class="footer">
+      <div class="wrap footer-inner">
         <div>
-          <div class="logo">Chain<span>Dev</span></div>
+          <a class="brand" href="#home">Chain<span>Dev</span></a>
           <p>Learn. Build. Connect. Impact.</p>
         </div>
-        <p>© 2026 ChainDev. Built with care in Dutsin-Ma.</p>
+        <p>© <span id="year"></span> ChainDev. Built with care in Dutsin-Ma.</p>
       </div>
     </footer>
+
+    <script>
+      const toggle = document.getElementById("menuToggle");
+      const links = document.getElementById("navlinks");
+      toggle.addEventListener("click", () => {
+        const isOpen = links.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        toggle.textContent = isOpen ? "×" : "☰";
+      });
+      links.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          links.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.textContent = "☰";
+        }),
+      );
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Tally embed loader. The placeholder stays visible until a real form ID is added.
+      const tallyFrame = document.querySelector("#registrationForm iframe");
+      if (!tallyFrame.dataset.tallySrc.includes("YOUR_TALLY_FORM_ID")) {
+        document.getElementById("formPlaceholder").style.display = "none";
+        const script = document.createElement("script");
+        script.src = "https://tally.so/widgets/embed.js";
+        script.onload = () => window.Tally?.loadEmbeds();
+        document.body.appendChild(script);
+      } else {
+        tallyFrame.style.display = "none";
+      }
+    </script>
+    <script>
+      (function () {
+        var d = document;
+        var w = "https://tally.so/widgets/embed.js";
+
+        function loadTally() {
+          if (typeof Tally !== "undefined") {
+            Tally.loadEmbeds();
+          } else {
+            d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(
+              function (iframe) {
+                iframe.src = iframe.dataset.tallySrc;
+              },
+            );
+          }
+        }
+
+        if (typeof Tally !== "undefined") {
+          loadTally();
+        } else if (!d.querySelector('script[src="' + w + '"]')) {
+          var s = d.createElement("script");
+          s.src = w;
+          s.onload = loadTally;
+          s.onerror = loadTally;
+          d.body.appendChild(s);
+        }
+      })();
+    </script>
   </body>
 </html>
