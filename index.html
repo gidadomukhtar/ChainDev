@@ -483,9 +483,9 @@
         <nav class="navlinks" id="navlinks" aria-label="Main navigation">
           <a href="#about">About</a><a href="#activities">What we do</a
           ><a href="#events">Events</a><a href="#projects">Projects</a
-          ><a href="#values">Our values</a><a href="#join">Join</a>
+          ><a href="#values">Our values</a><a href="join.html">Join</a>
         </nav>
-        <a class="btn btn-primary" href="#join">Become a member</a>
+        <a class="btn btn-primary" href="join.html">Become a member</a>
         <button
           class="menu-toggle"
           id="menuToggle"
@@ -517,7 +517,7 @@
             with the wider tech ecosystem.
           </p>
           <div class="actions">
-            <a class="btn btn-primary" href="#join">Join the community →</a
+            <a class="btn btn-primary" href="join.html">Join the community →</a
             ><a class="btn btn-ghost" href="#about">Discover ChainDev</a>
           </div>
           <p class="hero-note">
@@ -773,34 +773,6 @@
         </div>
       </section>
 
-      <section id="join" class="join-section">
-        <div class="container">
-          <div class="section-heading">
-            <span class="section-tag">Become a Member</span>
-            <h2>Join the ChainDev Community</h2>
-            <p>
-              Whether you're just getting started or already building, there's a
-              place for you in ChainDev. Register and become part of a community
-              that learns, builds and grows together.
-            </p>
-          </div>
-
-          <div class="registration-form">
-            <iframe
-              data-tally-src="https://tally.so/embed/6DZVkk?hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy"
-              width="100%"
-              height="3839"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              title="ChainDev Community Membership Registration"
-            >
-            </iframe>
-          </div>
-        </div>
-      </section>
-
       <section id="team">
         <div class="wrap">
           <p class="eyebrow">Community leadership</p>
@@ -835,11 +807,13 @@
     <script>
       const toggle = document.getElementById("menuToggle");
       const links = document.getElementById("navlinks");
+
       toggle.addEventListener("click", () => {
         const isOpen = links.classList.toggle("open");
         toggle.setAttribute("aria-expanded", String(isOpen));
         toggle.textContent = isOpen ? "×" : "☰";
       });
+
       links.querySelectorAll("a").forEach((link) =>
         link.addEventListener("click", () => {
           links.classList.remove("open");
@@ -847,47 +821,8 @@
           toggle.textContent = "☰";
         }),
       );
+
       document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Tally embed loader. The placeholder stays visible until a real form ID is added.
-      const tallyFrame = document.querySelector("#registrationForm iframe");
-      if (!tallyFrame.dataset.tallySrc.includes("YOUR_TALLY_FORM_ID")) {
-        document.getElementById("formPlaceholder").style.display = "none";
-        const script = document.createElement("script");
-        script.src = "https://tally.so/widgets/embed.js";
-        script.onload = () => window.Tally?.loadEmbeds();
-        document.body.appendChild(script);
-      } else {
-        tallyFrame.style.display = "none";
-      }
-    </script>
-    <script>
-      (function () {
-        var d = document;
-        var w = "https://tally.so/widgets/embed.js";
-
-        function loadTally() {
-          if (typeof Tally !== "undefined") {
-            Tally.loadEmbeds();
-          } else {
-            d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(
-              function (iframe) {
-                iframe.src = iframe.dataset.tallySrc;
-              },
-            );
-          }
-        }
-
-        if (typeof Tally !== "undefined") {
-          loadTally();
-        } else if (!d.querySelector('script[src="' + w + '"]')) {
-          var s = d.createElement("script");
-          s.src = w;
-          s.onload = loadTally;
-          s.onerror = loadTally;
-          d.body.appendChild(s);
-        }
-      })();
     </script>
   </body>
 </html>
