@@ -212,6 +212,55 @@
       .header-links a:hover {
         color: var(--green);
       }
+      .conduct-notice {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        max-width: 850px;
+        margin: 0 auto 25px;
+        padding: 24px;
+        border: 1px solid #75e3b544;
+        border-radius: 16px;
+        background: #75e3b50d;
+      }
+
+      .conduct-icon {
+        font-size: 28px;
+        line-height: 1.4;
+      }
+
+      .conduct-notice h2 {
+        margin: 0 0 8px;
+        color: var(--text);
+        font-size: 20px;
+      }
+
+      .conduct-notice p {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .conduct-notice a {
+        color: var(--green);
+        font-weight: 800;
+        font-size: 14px;
+      }
+
+      .conduct-notice a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .conduct-notice {
+          padding: 18px;
+          gap: 12px;
+        }
+
+        .conduct-notice h2 {
+          font-size: 18px;
+        }
+      }
 
       @media (max-width: 480px) {
         .header-links {
@@ -289,6 +338,29 @@
 
       <section class="form-section">
         <div class="wrap">
+          <div class="conduct-notice">
+            <div class="conduct-icon">🛡️</div>
+
+            <div>
+              <h2>Before you join ChainDev</h2>
+
+              <p>
+                ChainDev is built on respect, inclusion, collaboration and
+                shared learning. Every member is expected to help maintain a
+                welcoming and respectful environment.
+              </p>
+
+              <a
+                href="code-of-conduct.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read our Code of Conduct →
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="wrap">
           <div class="form-container">
             <iframe
               data-tally-src="https://tally.so/embed/6DZVkk?hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -315,6 +387,9 @@
       <div class="wrap footer-inner">
         <div>
           <a class="brand" href="index.html"> Chain<span>Dev</span> </a>
+          <p>
+            <a href="code-of-conduct.html">Code of Conduct</a>
+          </p>
           <p>Learn. Build. Connect. Impact.</p>
         </div>
 
