@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read the ChainDev Community Code of Conduct. Learn about our expectations, reporting process and commitment to a respectful, inclusive community.">
+  <meta name="theme-color" content="#07111f">
+  <title>Code of Conduct — ChainDev</title>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #0d1b2d;
+      --text: #f5f8fc;
+      --muted: #a5b4c7;
+      --green: #75e3b5;
+      --cyan: #72dff0;
+      --line: #ffffff18;
+      --max: 900px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 80% 0%, #12304a55, transparent 38%),
+        var(--bg);
+      color: var(--text);
+      font: 16px/1.8 Inter, system-ui, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #07111fee;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(15px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .brand span {
+      color: var(--green);
+    }
+
+    .back {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      padding: 75px 0 45px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: clamp(38px, 6vw, 58px);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, var(--green), var(--cyan));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .content {
+      padding: 45px 0 80px;
+    }
+
+    .notice {
+      padding: 20px;
+      margin-bottom: 35px;
+      border: 1px solid #75e3b544;
+      border-radius: 12px;
+      background: #75e3b50d;
+    }
+
+    .notice strong {
+      color: var(--green);
+    }
+
+    section {
+      margin: 0 0 42px;
+      scroll-margin-top: 100px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 25px;
+      letter-spacing: -.02em;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 17px;
+      color: var(--green);
+    }
+
+    p {
+      color: var(--muted);
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 24px;
+      color: var(--muted);
+    }
+
+    li {
+      padding-left: 5px;
+      margin: 9px 0;
+    }
+
+    li::marker {
+      color: var(--green);
+    }
+
+    .contact {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+
+    .email {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--green);
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .wrap {
+        width: calc(100% - 30px);
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .hero {
+        padding: 55px 0 35px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Chain<span>Dev</span></a>
+    <a class="back" href="index.html">← Back to homepage</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Our community standards</span>
+      <h1>Code of <span class="gradient">Conduct.</span></h1>
+      <p>
+        ChainDev is built on learning, collaboration and shared
+        opportunities. This Code of Conduct explains the behaviour
+        we expect from everyone and how we respond when those
+        expectations are not met.
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap content">
+
+    <div class="notice">
+      <strong>Our commitment</strong>
+      <p>
+        We want ChainDev to be a community where people can learn,
+        build, ask questions, share ideas and collaborate without
+        fear of harassment, discrimination or humiliation.
+        Everyone has a responsibility to help maintain that environment.
+      </p>
+    </div>
+
+    <section>
+      <h2>1. Who this applies to</h2>
+      <p>
+        This Code of Conduct applies to all ChainDev members,
+        founders, organisers, mentors, speakers, volunteers,
+        contributors and guests.
+      </p>
+      <p>It applies across ChainDev activities and spaces, including:</p>
+      <ul>
+        <li>Physical meetups, workshops, hackathons and other events.</li>
+        <li>Online meetings, discussions and learning sessions.</li>
+        <li>Official community communication channels.</li>
+        <li>Community projects, collaborations and activities.</li>
+        <li>Situations where someone represents ChainDev publicly.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Expected behaviour</h2>
+      <p>Everyone in ChainDev is expected to:</p>
+      <ul>
+        <li>Treat others with respect, patience and consideration.</li>
+        <li>Welcome people regardless of their background, discipline,
+            experience level or location.</li>
+        <li>Support beginners and avoid making anyone feel inadequate
+            for asking questions or not knowing something.</li>
+        <li>Communicate constructively, even when opinions differ.</li>
+        <li>Respect personal boundaries, privacy and individual differences.</li>
+        <li>Give appropriate credit when using or building on another
+            person's work.</li>
+        <li>Collaborate honestly and take responsibility for mistakes.</li>
+        <li>Help create an environment where people feel comfortable
+            contributing and learning.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Unacceptable behaviour</h2>
+      <p>
+        The following behaviours are not acceptable in ChainDev spaces:
+      </p>
+      <ul>
+        <li>Harassment, bullying, intimidation, threats or personal attacks.</li>
+        <li>Discrimination or hateful comments based on someone's
+            identity, background or personal characteristics.</li>
+        <li>Humiliating, insulting or deliberately discouraging beginners.</li>
+        <li>Unwanted sexual attention, advances or inappropriate contact.</li>
+        <li>Sharing private information, photographs or conversations
+            without permission.</li>
+        <li>Impersonation, scams, malicious links or deliberate attempts
+            to deceive community members.</li>
+        <li>Abusing a leadership, mentorship or organisational position.</li>
+        <li>Deliberately disrupting community activities or preventing
+            others from participating.</li>
+        <li>Retaliating against anyone who raises a concern or participates
+            in a report.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Reporting a concern</h2>
+      <p>
+        If you experience or witness behaviour that violates this
+        Code of Conduct, please report it to ChainDev leadership.
+        You do not need to confront the person involved before
+        submitting a report.
+      </p>
+
+      <div class="contact">
+        <strong>Official reporting contact</strong>
+        <p>
+          Send your report to the ChainDev community leadership:
+        </p>
+        <a class="email" href="mailto:chaindevcomm@gmail.com">
+          chaindevcomm@gmail.com
+        </a>
+      </div>
+
+      <h3>What to include in a report</h3>
+      <p>
+        Please provide as much relevant information as possible:
+      </p>
+      <ul>
+        <li>What happened and when it happened.</li>
+        <li>Where it occurred, such as an event or online platform.</li>
+        <li>The people involved, if known.</li>
+        <li>Any supporting evidence, such as messages or screenshots,
+            where available.</li>
+      </ul>
+
+      <h3>How reports are handled</h3>
+      <p>
+        Reports will be taken seriously and handled as confidentially
+        as reasonably possible. Access will be limited to authorised
+        ChainDev representatives responsible for addressing the concern.
+      </p>
+      <p>
+        Where possible, someone who is not directly involved in the
+        reported incident will help handle the matter. People who
+        submit reports in good faith will not be punished or
+        intimidated for speaking up.
+      </p>
+      <p>
+        If there is an immediate threat to someone's safety, contact
+        the appropriate local emergency or security services.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Consequences of unacceptable behaviour</h2>
+      <p>
+        Depending on the seriousness and circumstances of an incident,
+        ChainDev may take one or more of the following actions:
+      </p>
+      <ul>
+        <li>A private warning and request to stop the behaviour.</li>
+        <li>Removal from a discussion or community activity.</li>
+        <li>Removal from a particular event or session.</li>
+        <li>Temporary suspension from community spaces.</li>
+        <li>Removal from a leadership, mentoring or volunteer role.</li>
+        <li>Permanent exclusion from ChainDev.</li>
+      </ul>
+      <p>
+        Serious incidents may result in immediate action. Where
+        appropriate, matters may also be referred to relevant authorities.
+      </p>
+      <p>
+        Actions will be considered based on the available information,
+        the seriousness of the conduct and the need to protect
+        community members.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Accountability and commitment</h2>
+      <p>
+        ChainDev leadership is also bound by this Code of Conduct.
+        No founder, organiser, mentor or volunteer is exempt from
+        these expectations.
+      </p>
+      <p>
+        We recognise that building an inclusive community requires
+        continuous effort. We welcome constructive feedback and
+        remain committed to improving how people experience and
+        participate in ChainDev.
+      </p>
+      <p>
+        By participating in ChainDev activities and spaces, you agree
+        to respect these community standards.
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> ChainDev. Learn. Build. Connect. Impact.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
